@@ -3,11 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exoticus branded merchandise - apparel, accessories, and cannabis essentials.">
+    <meta name="description" content="Exoticus branded merchandise - exclusive lifestyle products.">
     <title>Merchandise | Exoticus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/facility.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .merch-hero {
+            min-height: 35vh;
+            background: linear-gradient(135deg, #7B4B94, #4ECDC4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .merch-hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(164,214,94,0.3), transparent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        .merch-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: white;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .lifestyle-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+        }
+        
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+        .product-feature {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .product-feature:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .product-img-wrapper {
+            height: 400px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        .product-img-wrapper img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .product-details {
+            padding: 2rem;
+        }
+        .product-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .product-tagline {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .featured-product {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background: linear-gradient(135deg, #7B4B94, #4ECDC4);
+            color: white;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 5rem;
+        }
+        .featured-product .product-img-wrapper {
+            background: rgba(255,255,255,0.1);
+            height: 500px;
+        }
+        .featured-product .product-details {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .featured-product h3 {
+            color: white;
+            font-size: 2.5rem;
+        }
+        .featured-product .product-tagline {
+            color: rgba(255,255,255,0.9);
+        }
+        .featured-product .product-price {
+            color: var(--primary-green);
+            background: white;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+            .featured-product {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -32,128 +189,103 @@
         </div>
     </nav>
 
-    <section class="page-hero" style="min-height: 30vh; padding: 3rem 0;">
-        <div class="container">
-            <h1 class="page-title" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem;">Exoticus Merchandise</h1>
-            <p class="page-subtitle" style="font-size: clamp(1rem, 2vw, 1.2rem);">Exclusive lifestyle products</p>
-        </div>
+    <section class="merch-hero">
+        <h1>Lifestyle Collection</h1>
     </section>
 
-    <!-- Apparel Section -->
-    <section style="padding: 6rem 0; background-color: var(--off-white);">
+    <!-- The Lounge Collection -->
+    <section class="lifestyle-section">
         <div class="container">
-            <h2 class="section-title centered">Apparel</h2>
-            <p class="section-subtitle centered">Represent the brand with style</p>
-
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #1A1D23, #343A40) url('images/merch-tshirt.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Exoticus Logo Tee</h3>
-                        <p>Premium organic cotton t-shirt with embroidered logo. Available in black, white, and olive green.</p>
-                        <p class="product-price">$29.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+            <div class="section-label">The Lounge Collection</div>
+            <h2 class="section-heading">Couch Mode Essentials</h2>
+            
+            <div class="product-showcase">
+                <!-- Featured Product: Couch Mode Tee -->
+                <div class="featured-product">
+                    <div class="product-img-wrapper">
+                        <img src="images/merch-t1.png" alt="Couch Mode T-Shirt">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-badge">Best Seller</div>
+                        <h3>Couch Mode: Activated Tee</h3>
+                        <p class="product-tagline">Perfect for those elevated evenings</p>
+                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Will fill in description later based on your product info/highlights.</p>
+                        <div class="product-price">$29.99</div>
                     </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #7B4B94, #A4D65E) url('images/merch-hoodie.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Premium Pullover Hoodie</h3>
-                        <p>Heavyweight fleece hoodie with screen-printed floral design. Comfort meets craftsmanship.</p>
-                        <p class="product-price">$69.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                <!-- Mug 1 -->
+                <div class="product-feature">
+                    <div class="product-img-wrapper">
+                        <img src="images/merch-mug1.png" alt="Couch Mode Mug">
+                    </div>
+                    <div class="product-details">
+                        <h3>Couch Mode Mug</h3>
+                        <p class="product-tagline">Your morning ritual, elevated</p>
+                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
+                        <div class="product-price">$16.99</div>
                     </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #4ECDC4, #A4D65E) url('images/merch-hat.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Structured Snapback</h3>
-                        <p>Classic snapback cap with embroidered logo. Adjustable fit, premium construction.</p>
-                        <p class="product-price">$34.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                <!-- Mug 2 -->
+                <div class="product-feature">
+                    <div class="product-img-wrapper">
+                        <img src="images/merch-mug2.png" alt="Nature's Best Dad Joke Mug">
+                    </div>
+                    <div class="product-details">
+                        <h3>Nature's Best Dad Joke Mug</h3>
+                        <p class="product-tagline">Humor meets sophistication</p>
+                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
+                        <div class="product-price">$16.99</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Accessories Section -->
-    <section style="padding: 6rem 0; background-color: white;">
+    <!-- Statement Pieces -->
+    <section style="padding: 6rem 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
         <div class="container">
-            <h2 class="section-title centered">Accessories & Essentials</h2>
-            <p class="section-subtitle centered">Thoughtfully designed for your lifestyle</p>
-
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #A4D65E, #4ECDC4) url('images/merch-tray.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Metal Rolling Tray</h3>
-                        <p>Durable metal tray with raised edges. Features the Exoticus floral design. Easy to clean.</p>
-                        <p class="product-price">$24.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+            <div class="section-label">Statement Pieces</div>
+            <h2 class="section-heading">Wear Your Vibe</h2>
+            
+            <div class="product-showcase">
+                <!-- Graphic Tee -->
+                <div class="product-feature">
+                    <div class="product-img-wrapper" style="background: linear-gradient(135deg, #1a1d23, #343a40);">
+                        <img src="images/merch-t2.png" alt="Exoticus Graphic Tee">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-badge" style="background: var(--accent-blue);">Limited</div>
+                        <h3>Exoticus Graphic Tee</h3>
+                        <p class="product-tagline">Retro vibes, modern comfort</p>
+                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
+                        <div class="product-price">$29.99</div>
                     </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #7B4B94, #4ECDC4) url('images/merch-grinder.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Precision Grinder</h3>
-                        <p>Aircraft-grade aluminum grinder with diamond-shaped teeth. Laser-engraved logo.</p>
-                        <p class="product-price">$39.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                <!-- Scarf -->
+                <div class="product-feature">
+                    <div class="product-img-wrapper" style="background: linear-gradient(135deg, #7B4B94, #A4D65E);">
+                        <img src="images/merch-scarf1.png" alt="Retro Scarf Collection">
                     </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #343A40, #7B4B94) url('images/merch-bag.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Smell-Proof Carry Bag</h3>
-                        <p>Discreet, odor-blocking storage bag with combination lock. Perfect for on-the-go.</p>
-                        <p class="product-price">$44.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #4ECDC4, #FF8C42) url('images/merch-jar.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">UV Glass Storage Jar</h3>
-                        <p>Premium UV-protected glass jar with airtight seal. Preserves freshness and potency.</p>
-                        <p class="product-price">$29.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #FF8C42, #FF006E) url('images/merch-stickers.jpg') center/cover; background-blend-mode: overlay;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Sticker Pack</h3>
-                        <p>Collection of 10 weatherproof vinyl stickers featuring Exoticus designs and logo.</p>
-                        <p class="product-price">$12.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #A4D65E, #7B4B94);"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Brand Pin Set</h3>
-                        <p>Enamel pin collection featuring the Exoticus logo and strain-specific designs.</p>
-                        <p class="product-price">$19.99</p>
-                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    <div class="product-details">
+                        <div class="product-badge" style="background: var(--secondary-purple);">Exclusive</div>
+                        <h3>Retro Scarf Collection</h3>
+                        <p class="product-tagline">Bold patterns, timeless style</p>
+                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
+                        <div class="product-price">$24.99</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Notice -->
-    <section style="padding: 4rem 0; background: linear-gradient(135deg, var(--primary-green), var(--accent-blue)); color: white; text-align: center;">
+    <!-- Coming Soon CTA -->
+    <section style="padding: 5rem 0; background: linear-gradient(135deg, var(--primary-green), var(--accent-blue)); color: white; text-align: center;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 1rem;">Merchandise Coming Soon</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Our full merchandise line launches early 2026. Be the first to know when it's available.</p>
+            <h2 style="color: white; margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3rem);">More Dropping Soon</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Be the first to know when new pieces launch</p>
             <a href="contact.html" class="btn-primary" style="background: white; color: var(--charcoal);">Get Notified</a>
         </div>
     </section>
