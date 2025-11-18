@@ -10,157 +10,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         .merch-hero {
-            min-height: 35vh;
+            min-height: 30vh;
             background: linear-gradient(135deg, #7B4B94, #4ECDC4);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 70px;
-            position: relative;
-            overflow: hidden;
-        }
-        .merch-hero::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(164,214,94,0.3), transparent);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
         }
         .merch-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             color: white;
             margin: 0;
-            position: relative;
-            z-index: 1;
+        }
+        .merch-hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
         }
         
-        .lifestyle-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-        }
-        .section-label {
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary-green);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .section-heading {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 3rem;
+        .merch-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
         }
         
-        .product-showcase {
+        .merch-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
         }
-        .product-feature {
+        .merch-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+        }
+        
+        .merch-item {
             background: white;
-            border-radius: 30px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .product-feature:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        .merch-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
-        .product-img-wrapper {
-            height: 400px;
+        
+        .merch-image {
+            height: 320px;
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
-            position: relative;
         }
-        .product-img-wrapper img {
-            max-width: 90%;
-            max-height: 90%;
+        .merch-image img {
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
         }
-        .product-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-green);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        
+        .merch-info {
+            padding: 1.5rem;
         }
-        .product-details {
-            padding: 2rem;
-        }
-        .product-details h3 {
-            font-size: 1.8rem;
+        .merch-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--charcoal);
         }
-        .product-tagline {
-            font-size: 0.95rem;
+        .merch-info p {
             color: var(--gray);
-            font-style: italic;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
         }
-        .product-price {
-            font-size: 1.5rem;
+        .merch-price {
+            font-size: 1.3rem;
             color: var(--primary-green);
             font-weight: 600;
-        }
-        
-        .featured-product {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            background: linear-gradient(135deg, #7B4B94, #4ECDC4);
-            color: white;
-            border-radius: 30px;
-            overflow: hidden;
-            margin-bottom: 5rem;
-        }
-        .featured-product .product-img-wrapper {
-            background: rgba(255,255,255,0.1);
-            height: 500px;
-        }
-        .featured-product .product-details {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .featured-product h3 {
-            color: white;
-            font-size: 2.5rem;
-        }
-        .featured-product .product-tagline {
-            color: rgba(255,255,255,0.9);
-        }
-        .featured-product .product-price {
-            color: var(--primary-green);
-            background: white;
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            margin-top: 1rem;
         }
         
         @media (max-width: 768px) {
-            .product-showcase {
+            .merch-grid {
                 grid-template-columns: 1fr;
             }
-            .featured-product {
+            .merch-grid.two-col {
                 grid-template-columns: 1fr;
             }
         }
@@ -190,103 +123,74 @@
     </nav>
 
     <section class="merch-hero">
-        <h1>Lifestyle Collection</h1>
-    </section>
-
-    <!-- The Lounge Collection -->
-    <section class="lifestyle-section">
-        <div class="container">
-            <div class="section-label">The Lounge Collection</div>
-            <h2 class="section-heading">Couch Mode Essentials</h2>
-            
-            <div class="product-showcase">
-                <!-- Featured Product: Couch Mode Tee -->
-                <div class="featured-product">
-                    <div class="product-img-wrapper">
-                        <img src="images/merch-t1.png" alt="Couch Mode T-Shirt">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-badge">Best Seller</div>
-                        <h3>Couch Mode: Activated Tee</h3>
-                        <p class="product-tagline">Perfect for those elevated evenings</p>
-                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Will fill in description later based on your product info/highlights.</p>
-                        <div class="product-price">$29.99</div>
-                    </div>
-                </div>
-
-                <!-- Mug 1 -->
-                <div class="product-feature">
-                    <div class="product-img-wrapper">
-                        <img src="images/merch-mug1.png" alt="Couch Mode Mug">
-                    </div>
-                    <div class="product-details">
-                        <h3>Couch Mode Mug</h3>
-                        <p class="product-tagline">Your morning ritual, elevated</p>
-                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
-                        <div class="product-price">$16.99</div>
-                    </div>
-                </div>
-
-                <!-- Mug 2 -->
-                <div class="product-feature">
-                    <div class="product-img-wrapper">
-                        <img src="images/merch-mug2.png" alt="Nature's Best Dad Joke Mug">
-                    </div>
-                    <div class="product-details">
-                        <h3>Nature's Best Dad Joke Mug</h3>
-                        <p class="product-tagline">Humor meets sophistication</p>
-                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
-                        <div class="product-price">$16.99</div>
-                    </div>
-                </div>
-            </div>
+        <div style="text-align: center;">
+            <h1>Exoticus Merchandise</h1>
+            <p>Exclusive lifestyle products</p>
         </div>
     </section>
 
-    <!-- Statement Pieces -->
-    <section style="padding: 6rem 0; background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
+    <section class="merch-section">
         <div class="container">
-            <div class="section-label">Statement Pieces</div>
-            <h2 class="section-heading">Wear Your Vibe</h2>
-            
-            <div class="product-showcase">
-                <!-- Graphic Tee -->
-                <div class="product-feature">
-                    <div class="product-img-wrapper" style="background: linear-gradient(135deg, #1a1d23, #343a40);">
-                        <img src="images/merch-t2.png" alt="Exoticus Graphic Tee">
+            <!-- Top Row: 3 Items -->
+            <div class="merch-grid">
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <img src="images/merch-t1.png" alt="T-Shirt 1">
                     </div>
-                    <div class="product-details">
-                        <div class="product-badge" style="background: var(--accent-blue);">Limited</div>
-                        <h3>Exoticus Graphic Tee</h3>
-                        <p class="product-tagline">Retro vibes, modern comfort</p>
-                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
-                        <div class="product-price">$29.99</div>
+                    <div class="merch-info">
+                        <h3>T-Shirt 1</h3>
+                        <p>Will fill in description later based on your product info/highlights.</p>
+                        <div class="merch-price">$29.99</div>
                     </div>
                 </div>
 
-                <!-- Scarf -->
-                <div class="product-feature">
-                    <div class="product-img-wrapper" style="background: linear-gradient(135deg, #7B4B94, #A4D65E);">
-                        <img src="images/merch-scarf1.png" alt="Retro Scarf Collection">
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <img src="images/merch-t2.png" alt="T-Shirt 2">
                     </div>
-                    <div class="product-details">
-                        <div class="product-badge" style="background: var(--secondary-purple);">Exclusive</div>
-                        <h3>Retro Scarf Collection</h3>
-                        <p class="product-tagline">Bold patterns, timeless style</p>
-                        <p style="color: var(--gray); margin-bottom: 1rem;">Will fill in description later based on your product info/highlights.</p>
-                        <div class="product-price">$24.99</div>
+                    <div class="merch-info">
+                        <h3>T-Shirt 2</h3>
+                        <p>Will fill in description later based on your product info/highlights.</p>
+                        <div class="merch-price">$29.99</div>
+                    </div>
+                </div>
+
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <img src="images/merch-mug1.png" alt="Mug 1">
+                    </div>
+                    <div class="merch-info">
+                        <h3>Mug 1</h3>
+                        <p>Will fill in description later based on your product info/highlights.</p>
+                        <div class="merch-price">$16.99</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Coming Soon CTA -->
-    <section style="padding: 5rem 0; background: linear-gradient(135deg, var(--primary-green), var(--accent-blue)); color: white; text-align: center;">
-        <div class="container">
-            <h2 style="color: white; margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3rem);">More Dropping Soon</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Be the first to know when new pieces launch</p>
-            <a href="contact.html" class="btn-primary" style="background: white; color: var(--charcoal);">Get Notified</a>
+            <!-- Bottom Row: 2 Items -->
+            <div class="merch-grid two-col">
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <img src="images/merch-mug2.png" alt="Mug 2">
+                    </div>
+                    <div class="merch-info">
+                        <h3>Mug 2</h3>
+                        <p>Will fill in description later based on your product info/highlights.</p>
+                        <div class="merch-price">$16.99</div>
+                    </div>
+                </div>
+
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <img src="images/merch-scarf1.png" alt="Scarf 1">
+                    </div>
+                    <div class="merch-info">
+                        <h3>Scarf 1</h3>
+                        <p>Will fill in description later based on your product info/highlights.</p>
+                        <div class="merch-price">$24.99</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
