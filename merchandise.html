@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Exoticus premium cannabis strains - Indica, Sativa, and Hybrid varieties.">
-    <title>Our Strains | Exoticus</title>
+    <meta name="description" content="Exoticus branded merchandise - apparel, accessories, and cannabis essentials.">
+    <title>Merchandise | Exoticus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/facility.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,16 +17,14 @@
                     <img src="images/Exoticus_Indica_Cap-Logo.png" alt="Exoticus Logo" class="logo-img">
                     <span class="logo-text">EXOTICUS</span>
                 </a>
-                <button class="menu-toggle" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
+                <button class="menu-toggle"><span></span><span></span><span></span></button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="facility.html">Our Facility</a></li>
-                    <li><a href="strains.html" class="active">Our Strains</a></li>
+                    <li><a href="strains.html">Our Strains</a></li>
                     <li><a href="story.html">Our Story</a></li>
                     <li><a href="brand.html">Our Brand</a></li>
-                    <li><a href="merchandise.html">Merchandise</a></li>
+                    <li><a href="merchandise.html" class="active">Merchandise</a></li>
                     <li><a href="where-to-buy.html">Where To Buy</a></li>
                     <li><a href="contact.html" class="btn-primary">Contact</a></li>
                 </ul>
@@ -36,111 +34,127 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1 class="page-title fade-in">Our Strains</h1>
-            <p class="page-subtitle fade-in-delay-1">Carefully curated genetics for every experience</p>
+            <h1 class="page-title">Exoticus Merchandise</h1>
+            <p class="page-subtitle">Premium branded essentials for the cultured cannabis enthusiast</p>
         </div>
     </section>
 
-    <section style="padding: 4rem 0; background-color: var(--off-white);">
+    <!-- Apparel Section -->
+    <section style="padding: 6rem 0; background-color: var(--off-white);">
         <div class="container">
-            <div class="strain-filters">
-                <button class="filter-btn active" data-filter="all">All Strains</button>
-                <button class="filter-btn" data-filter="indica">Indica</button>
-                <button class="filter-btn" data-filter="sativa">Sativa</button>
-                <button class="filter-btn" data-filter="hybrid">Hybrid</button>
-            </div>
+            <h2 class="section-title centered">Apparel</h2>
+            <p class="section-subtitle centered">Represent the brand with style</p>
 
-            <div class="strains-grid">
-                <div class="strain-card" data-category="indica">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(123,75,148,0.7), rgba(78,205,196,0.7)), url('https://picsum.photos/seed/indica1/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #7B4B94; color: white;">Indica</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Purple Dream</h3>
-                        <p class="strain-description">A relaxing indica-dominant strain perfect for evening wellness. Features rich purple hues and earthy, sweet aromatics.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Relaxing</span>
-                            <span class="effect-tag">Calming</span>
-                            <span class="effect-tag">Sleepy</span>
-                        </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #1A1D23, #343A40) url('images/merch-tshirt.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Exoticus Logo Tee</h3>
+                        <p>Premium organic cotton t-shirt with embroidered logo. Available in black, white, and olive green.</p>
+                        <p class="product-price">$29.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
                     </div>
                 </div>
 
-                <div class="strain-card" data-category="sativa">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(255,0,110,0.7), rgba(255,140,66,0.7)), url('https://picsum.photos/seed/sativa1/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #FF006E; color: white;">Sativa</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Solar Flare</h3>
-                        <p class="strain-description">Uplifting sativa with citrus notes and energizing properties. Ideal for daytime creativity and focus.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Energizing</span>
-                            <span class="effect-tag">Uplifting</span>
-                            <span class="effect-tag">Creative</span>
-                        </div>
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #7B4B94, #A4D65E) url('images/merch-hoodie.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Pullover Hoodie</h3>
+                        <p>Heavyweight fleece hoodie with screen-printed floral design. Comfort meets craftsmanship.</p>
+                        <p class="product-price">$69.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
                     </div>
                 </div>
 
-                <div class="strain-card" data-category="hybrid">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(78,205,196,0.7), rgba(255,140,66,0.7)), url('https://picsum.photos/seed/hybrid1/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #4ECDC4; color: white;">Hybrid</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Balanced Bliss</h3>
-                        <p class="strain-description">Perfectly balanced hybrid offering the best of both worlds. Versatile for any time of day.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Balanced</span>
-                            <span class="effect-tag">Euphoric</span>
-                            <span class="effect-tag">Relaxed</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strain-card" data-category="indica">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(123,75,148,0.7), rgba(164,214,94,0.7)), url('https://picsum.photos/seed/indica2/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #7B4B94; color: white;">Indica</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Midnight Garden</h3>
-                        <p class="strain-description">Deep relaxation with floral and earthy notes. Perfect for unwinding after a long day.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Relaxing</span>
-                            <span class="effect-tag">Sedating</span>
-                            <span class="effect-tag">Body High</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strain-card" data-category="sativa">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(164,214,94,0.7), rgba(78,205,196,0.7)), url('https://picsum.photos/seed/sativa2/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #FF006E; color: white;">Sativa</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Tropical Sunrise</h3>
-                        <p class="strain-description">Bright and invigorating sativa with tropical fruit flavors. Energizes mind and body.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Energetic</span>
-                            <span class="effect-tag">Happy</span>
-                            <span class="effect-tag">Focused</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="strain-card" data-category="hybrid">
-                    <div class="strain-image" style="background: linear-gradient(135deg, rgba(255,140,66,0.7), rgba(123,75,148,0.7)), url('https://picsum.photos/seed/hybrid2/600/400') center/cover;">
-                        <span class="strain-badge" style="background-color: #4ECDC4; color: white;">Hybrid</span>
-                    </div>
-                    <div class="strain-content">
-                        <h3 class="strain-name">Sunset Symphony</h3>
-                        <p class="strain-description">Harmonious hybrid with complex terpene profile. Smooth transition from day to evening.</p>
-                        <div class="strain-effects">
-                            <span class="effect-tag">Balanced</span>
-                            <span class="effect-tag">Mellow</span>
-                            <span class="effect-tag">Social</span>
-                        </div>
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4ECDC4, #A4D65E) url('images/merch-hat.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Structured Snapback</h3>
+                        <p>Classic snapback cap with embroidered logo. Adjustable fit, premium construction.</p>
+                        <p class="product-price">$34.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Accessories Section -->
+    <section style="padding: 6rem 0; background-color: white;">
+        <div class="container">
+            <h2 class="section-title centered">Accessories & Essentials</h2>
+            <p class="section-subtitle centered">Thoughtfully designed for your lifestyle</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #A4D65E, #4ECDC4) url('images/merch-tray.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Metal Rolling Tray</h3>
+                        <p>Durable metal tray with raised edges. Features the Exoticus floral design. Easy to clean.</p>
+                        <p class="product-price">$24.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #7B4B94, #4ECDC4) url('images/merch-grinder.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Precision Grinder</h3>
+                        <p>Aircraft-grade aluminum grinder with diamond-shaped teeth. Laser-engraved logo.</p>
+                        <p class="product-price">$39.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #343A40, #7B4B94) url('images/merch-bag.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smell-Proof Carry Bag</h3>
+                        <p>Discreet, odor-blocking storage bag with combination lock. Perfect for on-the-go.</p>
+                        <p class="product-price">$44.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4ECDC4, #FF8C42) url('images/merch-jar.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">UV Glass Storage Jar</h3>
+                        <p>Premium UV-protected glass jar with airtight seal. Preserves freshness and potency.</p>
+                        <p class="product-price">$29.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #FF8C42, #FF006E) url('images/merch-stickers.jpg') center/cover; background-blend-mode: overlay;"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sticker Pack</h3>
+                        <p>Collection of 10 weatherproof vinyl stickers featuring Exoticus designs and logo.</p>
+                        <p class="product-price">$12.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #A4D65E, #7B4B94);"></div>
+                    <div class="product-info">
+                        <h3 class="product-name">Brand Pin Set</h3>
+                        <p>Enamel pin collection featuring the Exoticus logo and strain-specific designs.</p>
+                        <p class="product-price">$19.99</p>
+                        <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem;">Pre-Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Notice -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, var(--primary-green), var(--accent-blue)); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Merchandise Coming Soon</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Our full merchandise line launches early 2026. Be the first to know when it's available.</p>
+            <a href="contact.html" class="btn-primary" style="background: white; color: var(--charcoal);">Get Notified</a>
         </div>
     </section>
 
